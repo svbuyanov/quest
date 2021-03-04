@@ -129,16 +129,16 @@ resource "aws_instance" "web_server" {
 			  sudo service docker start
 			  sudo usermod -a -G docker ec2-user
 	#create directory and deploy nodejs 		  
-	#		  mkdir /app
-        #      chmod 755 /app
-        #      cd /app
-        #      git clone https://github.com/rearc/quest.git
-        #      curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
-        #      sudo yum install nodejs --enablerepo=nodesource -y
-        #      node --version > nodeVersion.txt
-        #      cd /app/quest
-        #      npm install
-        #     npm start
+			  mkdir /app
+              chmod 755 /app
+              cd /app
+              git clone https://github.com/rearc/quest.git
+              curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+              sudo yum install nodejs --enablerepo=nodesource -y
+              node --version > nodeVersion.txt
+              cd /app/quest
+              npm install
+              npm start
 	             EOF
 			  
 }
