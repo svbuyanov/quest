@@ -125,11 +125,10 @@ resource "aws_instance" "web_server" {
 	#install nessesary package		  
         sudo yum update –y
         sudo yum install git -y
-			  sudo yum update -y
-        sudo amazon-linux-extras install docker
-        sudo service docker start
-        sudo usermod -a -G docker ec2-user
-	#create directory and deploy nodejs 		  
+        sudo amazon-linux-extras install docker -y
+        sudo service docker start -y
+        sudo usermod -a -G docker ec2-user -y
+ 	#create directory and deploy nodejs 		  
 			  mkdir /app
               chmod 755 /app
               cd /app
