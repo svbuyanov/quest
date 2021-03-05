@@ -99,7 +99,7 @@ resource "aws_security_group" "nodejs_Server" {
 ############# EC2 instances creation#########
 data "aws_availability_zones" "for_web"{}
 data "aws_ami" "amazon-linux-2" {
-  owners = ["063491364108"]
+  owners = ["amazon"]
   most_recent = true
  filter {
     name = "name"
@@ -128,7 +128,7 @@ resource "aws_instance" "web_server" {
         sudo amazon-linux-extras install docker -y
         sudo service docker start -y
         sudo usermod -a -G docker ec2-user -y
-        sudo docker service start -y
+        sudo service docker start -y
  	#create directory and deploy nodejs 		  
 			  mkdir /app
               chmod 755 /app
